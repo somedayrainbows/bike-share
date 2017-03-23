@@ -1,30 +1,30 @@
-<!DOCTYPE html>
+<div class="row">
+  <div class="col-sm-16">
+    <h3><i class="glyphicon glyphicon-plus"></i> Edit a Station</h3>
+    <hr>
+      <div class="row">
+        <div class="col-md-12">
+  			  <div class="well">Please edit the data below to edit this station.</div>
+        </div>
 
-<h1>Edit Station</h1>
+        </div>
+      </div>
+  </div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Dock Count</th>
-    <th>City</th>
-    <th>Installation Date</th>
-  </tr>
+  <div class="row">
+    <div class="col-md-16">
+      <hr>
+      <form action="/stations/<%= @station.id %>" method="post">
+        <input type="hidden" name="_method" value="PUT" />
+        <label for="">Name:&nbsp;</label>
+        <input type="textfield" name="station[name]" value="<%= @station.name %>">
+        <label for="">&nbsp;&nbsp;Dock Count:&nbsp;</label>
+        <input type="textfield" name="station[dock_count]" value="<%= @station.dock_count %>">
+        <label for="">&nbsp;&nbsp;Installation Date:&nbsp;</label>
+        <input type="textfield" name="station[installation_date]" value="<%= @station.installation_date %>"><br><br>
+        <input class="btn btn-info" type="submit" value="Update Station" />
+      </form>
 
-  <tr class="station-info">
-     <td>Name: <%= @station.name %> </td>
-     <td>Dock Count: <%= @station.dock_count %> </td>
-     <td> <%= @station.city %> </td> <!--check on this later-->
-     <td>Installation Date: <%= @station.installation_date %> </td>
-  </tr>
-</table>
-
-<form action="/stations/<%= @station.id %>" method="post">
-  <input type="hidden" name="_method" value="PUT" />
-  <label for="">Name:</label>
-  <input type="textfield" name="station[name]" value="<%= @station.name %>">
-  <label for="">Dock Count:</label>
-  <input type="textfield" name="station[dock_count]" value="<%= @station.dock_count %>">
-  <label for="">Installation Date:</label>
-  <input type="textfield" name="station[installation_date]" value="<%= @station.installation_date %>">
-  <input type="submit" value="Update Station" />
-</form>
+      </div>
+    </div>
+  </div>
