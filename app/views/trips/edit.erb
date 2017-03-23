@@ -1,7 +1,15 @@
-<!DOCTYPE html>
+<div class="row">
+  <div class="col-sm-16">
+    <h3><i class="glyphicon glyphicon-plus"></i> Edit a Trip</h3>
+    <hr>
+      <div class="row">
+        <div class="col-md-12">
+  			  <div class="well">Please edit the data below to edit this trip.</div>
+        </div>
 
-<h1>Edit Trip</h1>
-
+        </div>
+      </div>
+  </div>
 <table>
   <tr>
     <th>Duration</th>
@@ -15,33 +23,34 @@
   </tr>
 
   <tr>
-    <td>Duration: <%= @trip.duration %> </td>
-    <td>Start Station: <%= @trip.start_station.name %> </td>
-    <td>End Station: <%= @trip.end_station.name %> </td>
-    <td>Bike ID: <%= @trip.bike_id %> </td>
-    <td>Zipcode: <%= @trip.zipcode.zip_code %> </td>
-    <td>Subscription Type: <%= @trip.subscription.subscription %> </td>
-    <td>Start Date: <%= @trip.start_date %> </td>
-    <td>End Date: <%= @trip.end_date %> </td>  </tr>
+    <td><%= @trip.duration %> </td>
+    <td><%= @trip.start_station.name %> </td>
+    <td><%= @trip.end_station.name %> </td>
+    <td><%= @trip.bike_id %> </td>
+    <td><%= @trip.zipcode.zip_code %> </td>
+    <td><%= @trip.subscription %> </td>
+    <td><%= @trip.start_date %> </td>
+    <td><%= @trip.end_date %> </td>  </tr>
 </table>
+<p>&nbsp;</p>
 
 <form action="/trips/<%= @trip.id %>" method="post">
   <input type="hidden" name="_method" value="PUT" />
-  <label for="">Duration: </label>
+  <label for="">Duration:&nbsp; </label>
   <input type="textfield" name="trip[duration]">
-  <label for="">Starting Station: </label>
+  <label for="">&nbsp;&nbsp;Starting Station:&nbsp; </label>
   <input type="textfield" name="trip[start_station]">
-  <label for="">End Station: </label>
+  <label for="">&nbsp;&nbsp;End Station:&nbsp; </label>
   <input type="textfield" name="trip[end_station]">
-  <label for="">Zipcode: </label>
-  <input type="textfield" name="trip[zip_code]">
-  <label for="">Bike ID: </label>
+  <label for="">&nbsp;&nbsp;Zipcode:&nbsp; </label>
+  <input type="textfield" name="trip[zip_code]"><br><br>
+  <label for="">&nbsp;&nbsp;Bike ID:&nbsp; </label>
   <input type="textfield" name="trip[bike_id]">
-  <label for="">Subsciption Type: </label>
+  <label for="">&nbsp;&nbsp;Subsciption Type:&nbsp; </label>
   <input type="textfield" name="trip[subscription]">
-  <label for="">Start Date: </label>
+  <label for="">&nbsp;&nbsp;Start Date:&nbsp; </label>
   <input type="textfield" name="trip[start_date]">
-  <label for="">End Date: </label>
-  <input type="textfield" name="trip[end_date]">
+  <label for="">&nbsp;&nbsp;End Date:&nbsp; </label>
+  <input type="textfield" name="trip[end_date]"><br><br>
   <input class="btn btn-info" type="submit" value="Update Trip" />
 </form>
